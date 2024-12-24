@@ -1,6 +1,6 @@
 import React from "react";
 import { useCart } from "../hooks/useCart";
-
+import { Link } from "react-router-dom";
 import "../styles/Cart.css";
 
 export const Cart = ({ isVisible, onClose }) => {
@@ -42,6 +42,9 @@ return (
                         Total: 
                         {cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)} €
                     </h3>
+                    <Link to="/checkout">
+                        <button>Finalizar compra</button>
+                    </Link>
                 </div>
             </div>
         </div>
