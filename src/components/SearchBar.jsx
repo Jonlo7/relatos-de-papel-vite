@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
+import { useFilter } from "../hooks/useFilter";
 
 import "../styles/SearchBar.css";
 
-export const SearchBar = ({ onSearch }) => {
-  const [searchInput, setSearchInput] = useState("");
+export const SearchBar = () => {
+  const { searchTerm, setSearchTerm } = useFilter();
 
   const handleInputChange = (event) => {
-    const value = event.target.value;
-    setSearchInput(value);
-    onSearch(value); // Llama a la función de búsqueda proporcionada
+      setSearchTerm(event.target.value);
   };
 
   return (
     <div className="search-bar">
-      <input
-        type="text"
-        placeholder="Buscar libros por título..."
-        value={searchInput}
-        onChange={handleInputChange}
-      />
+        <input
+            type="text"
+            placeholder="Buscar libros por título..."
+            value={searchTerm}
+            onChange={handleInputChange}
+        />
     </div>
-  );
+);
 };

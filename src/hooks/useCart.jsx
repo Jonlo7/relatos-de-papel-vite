@@ -8,8 +8,10 @@ export const CartProvider = ({ children }) => {
     const addToCart = (book) => {
         setCart((prevCart) => {
             if (prevCart.find((item) => item.ISBN === book.ISBN)) {
+                console.log("Item already in cart");
                 return prevCart;
             }
+            console.log("Item added to cart");
             return [...prevCart, { ...book, quantity: 1 }];
         });
     };

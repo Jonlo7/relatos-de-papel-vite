@@ -17,6 +17,7 @@
     width: 100%;
     overflow: hidden;
     position: relative;
+    max-width: 250px;
 }
 
 .book-wrapper:hover {

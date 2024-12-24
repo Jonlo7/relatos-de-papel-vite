@@ -1,12 +1,19 @@
 import React from "react";
 import { useCart } from "../hooks/useCart";
+import { useFilter } from "../hooks/useFilter";
+import { AddCartButton } from "./AddCartButton";
 import { Link } from "react-router-dom";
 
 import "../styles/BookList.css";
 
 export const BookList = ({ bookArray }) => {
     
-    const { loading, addToCart } = useCart();
+    const { loading } = useCart();
+    const { searchTerm } = useFilter();
+
+    const filteredBooks = bookArray.filter((book) =>
+        book.title.toLowerCase().includes(searchTerm.toLowerCase())
+      );
 
     if (loading) {
         return <h1>Cargando libro...</h1>;
@@ -18,27 +25,30 @@ export const BookList = ({ bookArray }) => {
 
     return (
         <div className="book-list">
-            {bookArray.map((book, index) => (
-                <div key={index} className="book-wrapper">
-                    <div  className="book">
-                        <div className="book-cover">
-                          <img src={book.img} alt={book.title} />
-                        </div>
-                        <div className="book-details">
-                            <h3>{book.title}</h3>
-                            <h4>{book.author}</h4>
-                            <h4>{book.price} € </h4>
-                            <div className="book-actions">
-                             <Link to={`/books/${book.ISBN}`}>
-                                    <button>Ver detalles</button>
-                                </Link>
-                                <button onClick={() => addToCart(book)}>Añadir al carrito</button>
-                            </div>
-                        </div>
+          {filteredBooks.length > 0 ? (
+            filteredBooks.map((book) => (
+              <div key={book.ISBN} className="book-wrapper"> {/* Clave única con ISBN */}
+                <div className="book">
+                  <div className="book-cover">
+                    <img src={book.img} alt={book.title} />
+                  </div>
+                  <div className="book-details">
+                    <h2>{book.title}</h2>
+                    <h3>{book.author}</h3>
+                    <h3>${book.price}</h3>
+                    <div className="book-actions">
+                      <Link to={`/books/${book.ISBN}`}>
+                        <button>Ver detalles</button>
+                      </Link>
+                      <AddCartButton book={book} />
                     </div>
+                  </div>
                 </div>
-                
-            ))}
+              </div>
+            ))
+          ) : (
+            <h1 className="no-books-message">No se encontraron libros</h1> // Mensaje estilizado
+          )}
         </div>
-    );
+      );
 };
