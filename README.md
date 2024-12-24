@@ -53,5 +53,3 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
     npm run dev
 
 5. Abre tu navegador y navega a `http://localhost:5173` para ver la aplicación en funcionamiento.
-
-## 📄 Licencia
