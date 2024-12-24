@@ -21,7 +21,7 @@ return (
                         <div className="cart-item-details">
                             <h3>{item.title}</h3>
                             <p>{item.author}</p>
-                            <p>${item.price}</p>
+                            <h2>{item.price} €</h2>
                             <div className="cart-quantity">
                                 <button onClick={() => updateQuantity(item.ISBN, item.quantity - 1)}>
                                     -
@@ -31,14 +31,16 @@ return (
                                     +
                                 </button>
                             </div>
-                            <button onClick={() => removeFromCart(item.ISBN)}>Eliminar</button>
+                            <div className="cart-delete">
+                                <button onClick={() => removeFromCart(item.ISBN)}>Eliminar</button>
+                            </div>
                         </div>
                     </div>
                 ))}
                 <div className="cart-total">
                     <h3>
-                        Total: $
-                        {cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)}
+                        Total: 
+                        {cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)} €
                     </h3>
                 </div>
             </div>

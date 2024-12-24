@@ -27,7 +27,7 @@ export const BookList = ({ bookArray }) => {
         <div className="book-list">
           {filteredBooks.length > 0 ? (
             filteredBooks.map((book) => (
-              <div key={book.ISBN} className="book-wrapper"> {/* Clave única con ISBN */}
+              <div key={book.ISBN} className="book-wrapper">
                 <div className="book">
                   <div className="book-cover">
                     <img src={book.img} alt={book.title} />
@@ -35,7 +35,7 @@ export const BookList = ({ bookArray }) => {
                   <div className="book-details">
                     <h2>{book.title}</h2>
                     <h3>{book.author}</h3>
-                    <h3>${book.price}</h3>
+                    <h3>{book.price} €</h3>
                     <div className="book-actions">
                       <Link to={`/books/${book.ISBN}`}>
                         <button>Ver detalles</button>

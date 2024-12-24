@@ -29,7 +29,7 @@ export const BookDetail = () => {
                     <p><strong>Autor:</strong> {book.author}</p>
                     <p><strong>ISBN:</strong> {book.ISBN}</p>
                     <p><strong>Género:</strong> {book.genre}</p>
-                    <p><strong>Precio:</strong> ${book.price}</p>
+                    <p><strong>Precio:</strong> {book.price} €</p>
                     <p><strong>Rating:</strong> {book.rating} / 5</p>
                     <AddCartButton book={book} />
                 </div>
