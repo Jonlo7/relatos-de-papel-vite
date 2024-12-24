@@ -33,26 +33,24 @@ Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 1. Clona el repositorio:
 
     ```bash
-    
-    ```git clone https://github.com/tu-usuario/relatos-de-papel.git
+    git clone https://github.com/tu-usuario/relatos-de-papel.git
 
 2. Navega al directorio del proyecto:
 
     ```bash
     
-    ```cd relatos-de-papel
+    cd relatos-de-papel
 
 3. Instala las dependencias:
 
     ```bash
-    
-    ```npm install
+    npm install
 
 4. Inicia el servidor de desarrollo:
 
     ```bash
     
-    ```npm run dev
+    npm run dev
 
 5. Abre tu navegador y navega a `http://localhost:5173` para ver la aplicación en funcionamiento.
 
