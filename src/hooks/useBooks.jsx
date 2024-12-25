@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 import portada1 from "../assets/covers/portada1.jpg";
 import portada2 from "../assets/covers/portada2.jpg";
 import portada3 from "../assets/covers/portada3.jpg";
@@ -26,7 +26,7 @@ export const useBooks = () => {
                     reviews: [
                         { text: "Un libro maravilloso y conmovedor.", author: "Juan Pérez", rating: 5 },
                         { text: "Me encantó la historia del principito.", author: "Ana López", rating: 4.5 },
-                      ]
+                    ]
                 },
                 {
                     id: 2,
@@ -41,7 +41,7 @@ export const useBooks = () => {
                     reviews: [
                         { text: "Una obra maestra de la literatura.", author: "María Gómez", rating: 5 },
                         { text: "Me encantó la historia de los Buendía.", author: "Carlos Pérez", rating: 4.5 },
-                        ]
+                    ]
                 },
                 {
                     id: 3,
@@ -56,7 +56,7 @@ export const useBooks = () => {
                     reviews: [
                         { text: "Un libro imprescindible de la literatura española.", author: "Luisa Martínez", rating: 5 },
                         { text: "Me encantó la historia de Don Quijote y Sancho Panza.", author: "Pedro García", rating: 4.5 },
-                        ]
+                    ]
                 },
                 {
                     id: 4,
@@ -71,7 +71,7 @@ export const useBooks = () => {
                     reviews: [
                         { text: "Un libro que te hace reflexionar sobre la sociedad.", author: "Laura Fernández", rating: 4.5 },
                         { text: "Una visión aterradora del futuro.", author: "Miguel Torres", rating: 4.7 }
-                        ]
+                    ]
                 },
                 {
                     id: 5,
@@ -86,12 +86,12 @@ export const useBooks = () => {
                     reviews: [
                         { text: "Una novela romántica clásica.", author: "María López", rating: 4.5 },
                         { text: "Me encantó la historia de Elizabeth y Mr. Darcy.", author: "Carlos Pérez", rating: 4.5 }
-                        ]
+                    ]
                 }
             ]);
             setLoading(false);
         }, 2500);
     }, []);
 
-    return {books, loading};
+    return { books, loading };
 }

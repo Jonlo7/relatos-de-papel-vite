@@ -9,17 +9,17 @@ import { CheckOut } from "../views/CheckOut";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FilterProvider } from "../hooks/useFilter";
 
-export const AppRouter = () =>  {
+export const AppRouter = () => {
   return (
     <BrowserRouter>
       <FilterProvider>
-          <Routes>
-            <Route path="/" element={<Layout><Landing /></Layout>} />
-            <Route path="/books" element={<Layout><Home /></Layout>} />
-            <Route path="/books/:ISBN" element={<Layout><BookDetail /></Layout>} />
-            <Route path="/checkout" element={<CheckOut />} />
-            <Route path="*" element={<Layout><NotFound /></Layout>} />
-          </Routes>
+        <Routes>
+          <Route path="/" element={<Layout><Landing /></Layout>} />
+          <Route path="/books" element={<Layout><Home /></Layout>} />
+          <Route path="/books/:ISBN" element={<Layout><BookDetail /></Layout>} />
+          <Route path="/checkout" element={<CheckOut />} />
+          <Route path="*" element={<Layout><NotFound /></Layout>} />
+        </Routes>
       </FilterProvider>
     </BrowserRouter>
   );

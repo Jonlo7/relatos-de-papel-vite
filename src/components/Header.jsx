@@ -26,7 +26,7 @@ export const Header = () => {
                 <div className="header-logo">
                     <Link to="/books">
                         <button className="header-button">
-                            <img src={HomeIcon} alt ="Inicio"/>
+                            <img src={HomeIcon} alt="Inicio" />
                         </button>
                     </Link>
                 </div>

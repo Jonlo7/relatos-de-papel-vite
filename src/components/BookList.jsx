@@ -8,36 +8,38 @@ import { Link } from "react-router-dom";
 import "../styles/BookList.css";
 
 export const BookList = ({ bookArray }) => {
-    
-    const { loading } = useCart();
-    const { searchTerm } = useFilter();
 
-    const filteredBooks = bookArray.filter((book) =>
-        book.title.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+  const { loading } = useCart();
+  const { searchTerm } = useFilter();
 
-    if (loading) {
-        return <h1>Cargando libro...</h1>;
-    }
+  const filteredBooks = bookArray.filter((book) =>
+    book.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
-    if (!Array.isArray(bookArray)) {
-        return <div><h1>No hay libros disponibles</h1></div>;
-    }
+  if (loading) {
+    return <h1>Cargando libro...</h1>;
+  }
 
-    return (
-        <div className="book-list">
-          {filteredBooks.length > 0 ? (
-            filteredBooks.map((book) => (
-              <Book key={book.ISBN} {...book}>
-                      <Link to={`/books/${book.ISBN}`}>
-                        <button>Ver detalles</button>
-                      </Link>
-                      <AddCartButton book={book} />
-              </Book>
-            ))
-          ) : (
-            <h1 className="no-books-message">No se encontraron libros</h1> // Mensaje estilizado
-          )}
-        </div>
-      );
+  if (!Array.isArray(bookArray)) {
+    return <div><h1>No hay libros disponibles</h1></div>;
+  }
+
+  return (
+    <div className="book-list">
+      {filteredBooks.length > 0 ? (
+        filteredBooks.map((book) => (
+          <div key={book.ISBN} className="book-list-wrapper">
+            <Book {...book}>
+              <Link to={`/books/${book.ISBN}`}>
+                <button>Ver detalles</button>
+              </Link>
+              <AddCartButton book={book} />
+            </Book>
+          </div>
+        ))
+      ) : (
+        <h1 className="no-books-message">No se encontraron libros</h1>
+      )}
+    </div>
+  );
 };

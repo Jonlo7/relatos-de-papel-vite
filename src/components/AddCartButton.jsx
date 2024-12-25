@@ -3,7 +3,7 @@ import { useCart } from "../hooks/useCart";
 
 export const AddCartButton = ({ book }) => {
     const { addToCart } = useCart();
-    const {quantity} = useState(1);
+    const { quantity } = useState(1);
 
     return (
         <div className="add-cart-button">

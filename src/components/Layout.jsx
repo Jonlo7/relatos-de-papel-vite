@@ -4,7 +4,7 @@ import { Footer } from "./Footer";
 
 import "../styles/Layout.css";
 
-export const Layout = ({children}) => {
+export const Layout = ({ children }) => {
     return (
         <div className="container" >
             <Header />

@@ -6,9 +6,9 @@ function App() {
 
   return (
     <CartProvider>
-    <div className="App">
-      <AppRouter />
-    </div>
+      <div className="App">
+        <AppRouter />
+      </div>
     </CartProvider>
   )
 }

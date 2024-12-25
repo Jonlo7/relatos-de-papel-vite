@@ -10,7 +10,7 @@ export const Cart = ({ isVisible, onClose }) => {
         return null;
     }
 
-return (
+    return (
         <div className="cart-overlay">
             <div className="cart">
                 <button className="cart-close" onClick={onClose}>X</button>
@@ -19,9 +19,9 @@ return (
                     <div key={item.ISBN} className="cart-item">
                         <img src={item.img} alt={item.title} />
                         <div className="cart-item-details">
-                            <h3>{item.title}</h3>
+                            <h2>{item.title}</h2>
                             <p>{item.author}</p>
-                            <h2>{item.price} €</h2>
+                            <h3>{item.price} €</h3>
                             <div className="cart-quantity">
                                 <button onClick={() => updateQuantity(item.ISBN, item.quantity - 1)}>
                                     -
@@ -38,10 +38,10 @@ return (
                     </div>
                 ))}
                 <div className="cart-total">
-                    <h3>
-                        Total: 
+                    <h2>
+                        Total:
                         {cart.reduce((total, item) => total + item.price * item.quantity, 0).toFixed(2)} €
-                    </h3>
+                    </h2>
                     <Link to="/checkout">
                         <button>Finalizar compra</button>
                     </Link>

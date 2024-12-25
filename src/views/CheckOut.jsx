@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import "../styles/CheckOut.css";
 
 export const CheckOut = () => {
-    const { cart, clearCart } = useCart(); 
+    const { cart, clearCart } = useCart();
     const navigate = useNavigate();
 
     const handleConfirmPurchase = () => {
-        alert("Pedido realizado. Gracias por tu compra."); 
-        clearCart(); 
-        navigate("/books"); 
+        alert("Pedido realizado. Gracias por tu compra.");
+        clearCart();
+        navigate("/books");
     };
 
     const totalPrice = cart.reduce((total, item) => total + item.price * item.quantity, 0);
