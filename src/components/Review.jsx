@@ -1,11 +1,16 @@
-import React from 'react';
+import React from "react";
+import { StarRating } from "./StarRating";
 
-export const Review = ({ reviewer, comment, rating }) => {
-    return (
-        <div className="review">
-            <p><strong>{reviewer}</strong></p>
-            <p>{comment}</p>
-            <p>Rating: {rating} / 5</p>
-        </div>
-    );
+import "../styles/Review.css";
+
+export const Review = ({ review }) => {
+  return (
+    <div className="review">
+      <p className="review-text">"{review.text}"</p>
+      <p className="review-author">- {review.author}</p>
+      <div className="review-rating">
+        <StarRating rating={review.rating} />
+      </div>
+    </div>
+  );
 };
