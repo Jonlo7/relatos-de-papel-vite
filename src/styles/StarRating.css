@@ -1,0 +1,15 @@
+.star-rating {
+    display: flex;
+    gap: 2px;
+  }
+  
+  .star {
+    font-size: 20px;
+    color: #ddd;
+    transition: color 0.3s ease;
+  }
+  
+  .star.filled {
+    color: #ffc107; /* Color para estrellas llenas (amarillo) */
+  }
+  
