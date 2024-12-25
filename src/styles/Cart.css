@@ -1,68 +1,67 @@
 .cart {
-    padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  
-  .cart-item img {
-    width: 60px;
-    height: auto;
-    margin-right: 15px;
-  }
-  
-  .cart-item-details {
-    flex-grow: 1;
-    text-align: left;
-  }
-  
-  .cart-quantity {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  
-  .cart-quantity button {
-    padding: 5px 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .cart-quantity button:hover {
-    background-color: #0056b3;
-  }
-  
-  .cart-total {
-    text-align: right;
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
-  }
+  padding: 20px;
+  max-width: 850px;
+  margin: 0 auto;
+}
 
-  .cart-total button{
-    padding: 10px;
-    width: 75%;
-    font-size: 14px;
-    color: white;
-    background-color: #2d91c0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #a7a7a7;
+  padding: 10px 0;
+}
 
-  .cart-total button:hover {
-    background-color: #0056b3;
-  }
+.cart-item img {
+  width: 60px;
+  height: auto;
+  margin-right: 15px;
+}
 
+.cart-item-details {
+  flex-grow: 1;
+  text-align: left;
+}
+
+.cart-quantity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-quantity button {
+  padding: 5px 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cart-quantity button:hover {
+  background-color: #0056b3;
+}
+
+.cart-total {
+  text-align: right;
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.cart-total button {
+  padding: 10px;
+  width: 75%;
+  font-size: 14px;
+  color: white;
+  background-color: #2d91c0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cart-total button:hover {
+  background-color: #0056b3;
+}
