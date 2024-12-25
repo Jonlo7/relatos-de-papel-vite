@@ -41,7 +41,6 @@ export const BookDetail = () => {
           <p><strong>Género:</strong> {book.genre}</p>
           <p><strong>ISBN:</strong> {book.ISBN}</p>
           <p className="book-detail-price"><strong>Precio:</strong> {book.price} €</p>
-          <p><strong>Rating:</strong></p>
           <StarRating rating={book.rating} />
           <div className="book-detail-actions">
             <AddCartButton book={book} />
