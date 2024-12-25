@@ -1,4 +1,11 @@
 .home {
-    padding: 20px;
-    text-align: center;
-  }
+  padding: 20px;
+  text-align: center;
+  align-items: center;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
