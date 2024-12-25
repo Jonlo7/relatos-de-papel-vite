@@ -22,7 +22,11 @@ export const useBooks = () => {
                     sinapsis: "Un piloto varado en el desierto conoce a un joven príncipe de otro planeta.",
                     price: 10.99,
                     rating: 4.8,
-                    img: portada1
+                    img: portada1,
+                    reviews: [
+                        { text: "Un libro maravilloso y conmovedor.", author: "Juan Pérez", rating: 5 },
+                        { text: "Me encantó la historia del principito.", author: "Ana López", rating: 4.5 },
+                      ]
                 },
                 {
                     id: 2,
@@ -33,7 +37,11 @@ export const useBooks = () => {
                     sinapsis: "La historia de la familia Buendía en el pueblo ficticio de Macondo.",
                     price: 14.99,
                     rating: 4.7,
-                    img: portada2
+                    img: portada2,
+                    reviews: [
+                        { text: "Una obra maestra de la literatura.", author: "María Gómez", rating: 5 },
+                        { text: "Me encantó la historia de los Buendía.", author: "Carlos Pérez", rating: 4.5 },
+                        ]
                 },
                 {
                     id: 3,
@@ -44,7 +52,11 @@ export const useBooks = () => {
                     sinapsis: "Las aventuras de un hidalgo que pierde la cordura y se convierte en caballero andante.",
                     price: 18.99,
                     rating: 4.9,
-                    img: portada3
+                    img: portada3,
+                    reviews: [
+                        { text: "Un libro imprescindible de la literatura española.", author: "Luisa Martínez", rating: 5 },
+                        { text: "Me encantó la historia de Don Quijote y Sancho Panza.", author: "Pedro García", rating: 4.5 },
+                        ]
                 },
                 {
                     id: 4,
@@ -55,7 +67,11 @@ export const useBooks = () => {
                     sinapsis: "Una novela sobre un futuro totalitario y la vigilancia extrema.",
                     price: 12.99,
                     rating: 4.6,
-                    img: portada4
+                    img: portada4,
+                    reviews: [
+                        { text: "Un libro que te hace reflexionar sobre la sociedad.", author: "Laura Fernández", rating: 4.5 },
+                        { text: "Una visión aterradora del futuro.", author: "Miguel Torres", rating: 4.7 }
+                        ]
                 },
                 {
                     id: 5,
@@ -66,7 +82,11 @@ export const useBooks = () => {
                     sinapsis: "La historia de Elizabeth Bennet y su complicada relación con Mr. Darcy.",
                     price: 9.99,
                     rating: 4.5,
-                    img: portada5
+                    img: portada5,
+                    reviews: [
+                        { text: "Una novela romántica clásica.", author: "María López", rating: 4.5 },
+                        { text: "Me encantó la historia de Elizabeth y Mr. Darcy.", author: "Carlos Pérez", rating: 4.5 }
+                        ]
                 }
             ]);
             setLoading(false);

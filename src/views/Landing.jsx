@@ -5,7 +5,7 @@ import useRedirection from "../hooks/useRedirection";
 import "../styles/Landing.css";
 
 export const Landing = () => {
-    useRedirection("/books", 5000); // Redireccionamo en 3 segundos
+    useRedirection("/books", 5000);
 
     return (
         <div className="landing">

@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout";
 import { NotFound } from "../views/NotFound";
 import { BookDetail } from "../views/BookDetail";
 import { Home } from "../views/Home";
-import { CheckOut } from "../components/CheckOut";
+import { CheckOut } from "../views/CheckOut";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { FilterProvider } from "../hooks/useFilter";
