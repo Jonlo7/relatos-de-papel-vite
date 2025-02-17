@@ -23,11 +23,11 @@ export const Cart = ({ isVisible, onClose }) => {
                             <p>{item.author}</p>
                             <h3>{item.price} €</h3>
                             <div className="cart-quantity">
-                                <button onClick={() => updateQuantity(item.ISBN, item.quantity - 1)}>
+                                <button className="minus-button" onClick={() => updateQuantity(item.ISBN, item.quantity - 1)}>
                                     -
                                 </button>
                                 <span>{item.quantity}</span>
-                                <button onClick={() => updateQuantity(item.ISBN, item.quantity + 1)}>
+                                <button className="plus-button" onClick={() => updateQuantity(item.ISBN, item.quantity + 1)}>
                                     +
                                 </button>
                             </div>
