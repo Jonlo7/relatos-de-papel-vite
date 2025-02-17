@@ -1,3 +1,3 @@
 module.exports = {
-    default: `--require tests/steps/**/*.js --format summary`
-  };
+  default: 'tests/features/**/*.feature --require tests/steps/**/*.cjs --format summary'
+};

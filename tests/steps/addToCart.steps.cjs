@@ -6,16 +6,18 @@ const assert = require('assert');
 
 let driver;
 
-// Configuramos el servicio de ChromeDriver usando la ruta instalada por npm
-chrome.setDefaultService(new chrome.ServiceBuilder(chromedriver.path).build());
-
 Given('que el usuario está en la página de libros', async function () {
-  // Inicia el driver y navega a la URL de la página de libros (usando Vite)
-  driver = await new Builder().forBrowser('chrome').build();
-  await driver.get('http://localhost:5173/books');
+  // Creamos el ServiceBuilder usando la ruta del chromedriver
+  const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path);
 
-  // Espera a que se renderice la lista de libros usando la clase ".book-list"
-  await driver.wait(until.elementLocated(By.css('.book-list')), 5000);
+  // Construimos el driver para Chrome utilizando el servicio de ChromeDriver
+  driver = await new Builder()
+    .forBrowser('chrome')
+    .setChromeService(serviceBuilder)
+    .build();
+
+  await driver.get('http://localhost:5173/books');
+  await driver.wait(until.elementLocated(By.css('.book-list')), 10000);
 });
 
 When('el usuario hace clic en el botón "Añadir al carrito" del libro {string}', async function (bookTitle) {
