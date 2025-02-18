@@ -1,4 +1,4 @@
-Feature: Operaciones avanzadas de compra (Múltiples libros)
+Feature: Confirmar compra de varios libros
 
   Scenario: Añadir un ejemplar de cada libro y confirmar compra
     Given que el usuario está en la página de libros

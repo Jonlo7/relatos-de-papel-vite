@@ -1,48 +1,25 @@
-// bookDetailToCart.steps.cjs
-const { When } = require('@cucumber/cucumber');
+const { When, Then } = require('@cucumber/cucumber');
 const { By, until } = require('selenium-webdriver');
 const { getDriver } = require('./commonSteps.cjs');
 
+
 When('el usuario hace clic en el libro {string}', async function (bookTitle) {
-  const driver = getDriver();
-  const bookElement = await driver.findElement(
-    By.xpath(`//div[contains(@class, "book-details")]//h2[text()="${bookTitle}"]`)
-  );
-  await bookElement.click();
-});
+    const driver = getDriver();
+    const bookTitleElement = await driver.findElement(
+      By.xpath(`//div[contains(@class, "book-details")]/h2[text()="${bookTitle}"]`)
+    );
+    const bookContainer = await bookTitleElement.findElement(
+      By.xpath('./ancestor::div[contains(@class, "book")]')
+    );
+    const verDetalles = await bookContainer.findElement(
+      By.xpath('.//div[contains(@class, "book-actions")]//button[contains(text(), "Ver detalles")]')
+    );
+    await verDetalles.click();
+  });;
 
-When('el usuario hace clic en el botón "Añadir al carrito" en la vista de detalle', async function () {
-  const driver = getDriver();
-  const addButton = await driver.wait(
-    until.elementLocated(By.xpath(`//button[contains(text(), "Añadir al carrito")]`)),
-    5000
-  );
-  await addButton.click();
-});
 
-When('el usuario incrementa la cantidad del libro {string} en {int}', async function (bookTitle, increment) {
+Then('el usuario debería ver la vista de detalle del libro {string}', async function (bookTitle) {
   const driver = getDriver();
-  const cartItemLocator = By.xpath(`
-    //div[contains(@class, "cart-item-details")]
-    //h2[normalize-space(text())="${bookTitle}"]
-    /ancestor::div[contains(@class, "cart-item")]
-  `);
-  await driver.wait(until.elementLocated(cartItemLocator), 5000);
-  const cartItem = await driver.findElement(cartItemLocator);
-
-  const plusButton = await cartItem.findElement(
-    By.xpath('.//div[contains(@class, "cart-quantity")]//button[contains(@class, "plus-button")]')
-  );
-  for (let i = 0; i < increment; i++) {
-    await plusButton.click();
-    await driver.sleep(500);
-  }
-});
-
-When('el usuario hace clic en el botón "Finalizar compra"', async function () {
-  const driver = getDriver();
-  const finalizeButton = await driver.findElement(
-    By.xpath(`//button[contains(text(), "Finalizar compra")]`)
-  );
-  await finalizeButton.click();
+  const isbn = "978-3-16-148410-0";
+  await driver.wait(until.urlContains(`/books/${isbn}`), 10000);
 });

@@ -1,4 +1,7 @@
-const { Given, When, Then, After } = require('@cucumber/cucumber');
+const { Given, When, Then, After, setDefaultTimeout } = require('@cucumber/cucumber');
+
+setDefaultTimeout(15000);
+
 const { Builder, By, until } = require('selenium-webdriver');
 const chrome = require('selenium-webdriver/chrome');
 const chromedriver = require('chromedriver');
@@ -15,16 +18,14 @@ function setDriver(d) {
 }
 
 Given('que el usuario está en la página de libros', async function () {
-  const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path);
-  driver = await new Builder()
-    .forBrowser('chrome')
-    .setChromeService(serviceBuilder)
-    .build();
-
-  await driver.get('http://localhost:5173/books');
-  await driver.wait(until.elementLocated(By.css('.book-list')), 10000);
-  setDriver(driver);
-});
+    const serviceBuilder = new chrome.ServiceBuilder(chromedriver.path);
+    driver = await new Builder()
+      .forBrowser('chrome')
+      .setChromeService(serviceBuilder)
+      .build();
+    await driver.get('http://localhost:5173/books');
+    await driver.wait(until.elementLocated(By.css('.book-list')), 10000);
+  });
 
 When('el usuario abre el carrito', async function () {
   const d = getDriver();

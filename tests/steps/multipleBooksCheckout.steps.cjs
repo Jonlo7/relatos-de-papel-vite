@@ -15,6 +15,14 @@ When('el usuario añade un ejemplar de cada libro al carrito', async function ()
   }
 });
 
+When('el usuario hace clic en el botón "Finalizar compra"', async function () {
+  const driver = getDriver();
+  const finalizeButton = await driver.findElement(
+    By.xpath(`//button[contains(text(), "Finalizar compra")]`)
+  );
+  await finalizeButton.click();
+});
+
 When('el usuario hace clic en el botón "Confirmar Compra"', async function () {
   const driver = getDriver();
   const confirmButton = await driver.findElement(
